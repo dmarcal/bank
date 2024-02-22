@@ -2,19 +2,22 @@ package model.entities;
 
 import java.io.Serializable;
 
-public class Department implements Serializable {
+public class City implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	private String name;
 	
-	public Department() {
+	private State state;
+	
+	public City() {
 	}
 
-	public Department(Integer id, String name) {
+	public City(Integer id, String name, State state) {
 		this.id = id;
 		this.name = name;
+		this.state = state;
 	}
 
 	public Integer getId() {
@@ -33,8 +36,18 @@ public class Department implements Serializable {
 		this.name = name;
 	}
 
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
 	@Override
 	public String toString() {
-		return "Department [id=" + id + ", name=" + name + "] " + " HashCode=" + hashCode();
+		return "City [id=" + id + ", name=" + name + ", HashCode=" + hashCode() 
+		+ ", state=" + state + "]";
 	}
+
 }
